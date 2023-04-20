@@ -1,0 +1,44 @@
+.container{
+    max-width: 600px;
+    background-color: var(--dark-700);
+    color: var(--white);
+
+    h2{
+        margin: 1rem 0;
+    }
+}
+.containerItem{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    color: var(--red-900);
+    strong{
+        color: var(--green-900);
+    }
+}
+
+.description{
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    word-break: break-all;
+    color: var(--white);
+}
+
+.buttonOrder{
+    margin-top: 1.5rem;
+    background-color: rgba(0,0,0, 40%);
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    color: var(--green-900);
+}
+
+.table{
+    font-size: 1.4rem;
+}
+
+@media screen  and (max-width: 700px) {
+    .container{
+        max-width: 400px;
+    }
+}

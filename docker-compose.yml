@@ -1,0 +1,53 @@
+version: '3.3'
+
+services:
+  db_postgres:
+    container_name: db_postgres
+    build: ./backend/bd
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: App@1234
+      POSTGRES_DB: pizzaria
+    ports:
+      - "5430:5432"
+    volumes:
+      - ./backend/bd/backups:/var/lib/postgresql/backups
+    networks:
+      - pizzaria-network
+
+  app_back:
+    container_name: app_back
+    build: ./backend
+    environment:
+      DB_HOST: db_postgres
+      DB_PORT: 5432
+      DB_NAME: pizzaria
+      DB_USER: postgres
+      DB_PASSWORD: App@1234
+    ports:
+      - '3333:3333'
+    volumes:
+      - ./backend:/usr/app
+    depends_on:
+      - db_postgres
+    links:
+      - db_postgres
+    networks:
+      - pizzaria-network
+
+  app_front:
+    container_name: app_front
+    build: ./frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/usr/app
+    links:
+      - app_back
+    networks:
+      - pizzaria-network
+
+networks:
+  pizzaria-network:
+    external: true

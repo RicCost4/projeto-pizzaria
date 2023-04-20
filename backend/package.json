@@ -1,0 +1,44 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Projeto Pizzaria do Curso Udemy do Matheus Fraga",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "start": "nodemon --transpile-only src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Richard Artur",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/jasmine": "^4.3.1",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/multer": "^1.4.7",
+    "jasmine-core": "^4.5.0",
+    "karma": "^6.4.1",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-jasmine": "^5.1.0",
+    "karma-webpack": "^5.0.0",
+    "prisma": "^4.13.0",
+    "ts-loader": "^9.4.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.13.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22"
+  }
+}

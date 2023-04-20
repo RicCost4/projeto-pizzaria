@@ -1,0 +1,6 @@
+Backup postgres.
+
+Fazer backup pelo container: 'após o primeiro backup, habilitar o restores no dockerfile.'
+    Dentro do container: pg_dump -U postgres -d pizzaria -f /backups/pizzaria.sql
+
+    Terminal do seu pC: docker cp <container_id>:/backups/pizzaria.sql /caminho/para/diretorio/local
